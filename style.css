@@ -1,0 +1,173 @@
+:root {
+  /* font-familly */
+  --bodyFont: "Poppins", sans-serif;
+  --headingFont: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  /* font size fluide responsive */
+  --font-size-small: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-p: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-h5: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-h4: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-h3: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --font-size-h2: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-h1: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+  /* couleurs */
+  --colorBlack: #222;
+  --colorWhite: #fff;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --color-hover: #ecaa53;
+  --color-burger: #f79517;
+
+  /* primary colors */
+  --primary-50: #fff1f4;
+  --primary-100: #ffe3e8;
+  --primary-200: #ffcbd8;
+  --primary-300: #ffa1b8;
+  --primary-400: #ff6d94;
+  --primary-500: #fa3972;
+  --primary-600: #e91f64;
+  --primary-700: #c40c4f;
+  --primary-800: #c40c4f;
+  --primary-900: #8c0f45;
+  --primary-950: #4e0321;
+
+  /* grey */
+  --grey-50: hsl(204, 26%, 96%);
+  --grey-100: hsl(207, 22%, 90%);
+  --grey-200: hsl(211, 23%, 82%);
+  --grey-300: hsl(208, 23%, 69%);
+  --grey-400: hsl(210, 22%, 49%);
+  --grey-500: hsl(211, 24%, 43%);
+  --grey-600: hsl(213, 23%, 36%);
+  --grey-700: hsl(216, 20%, 31%);
+  --grey-800: hsl(217, 17%, 27%);
+  --grey-900: hsl(218, 16%, 24%);
+  --grey-950: hsl(221, 21%, 15%);
+
+  /* rest of vars */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-950);
+  --border-radius: 0.25rem;
+  --letter-spacing: 0.05em;
+  --transition: all 0.3s ease-in-out;
+  --vew-width: 90vw;
+  --max-width: 670px;
+  --fixed-width: 400px;
+
+  /* box shadow */
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  height: 100vh;
+  background: no-repeat url(./images/boutique.jpg) fixed center/cover;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--textColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: var(--grey-100);
+  border-radius: var(--border-radius);
+  width: var(--vew-width);
+  max-width: var(--max-width);
+  height: 200px;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: var(--shadow-xl);
+}
+.card h2 {
+  font-size: var(--font-size-h2);
+  /* padding-bottom: 1rem; */
+}
+.card .btn {
+  box-shadow: var(--shadow-xl);
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  border: 2px solid #408c99;
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+  transition: var(--transition);
+}
+.card .btn:hover {
+  background: transparent;
+  color: #408c99;
+}
+.modale {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modale-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--border-radius);
+  align-content: center;
+  background: var(--grey-100);
+  padding: 1rem;
+  width: var(--vew-width);
+  max-width: var(--max-width);
+  height: 300px;
+  box-shadow: var(--shadow-xl);
+  display: grid;
+  justify-content: center;
+}
+.modale-content h2 {
+  font-size: var(--font-size-h3);
+  text-transform: capitalize;
+}
+.modale-content .btn {
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-h4);
+  color: var(--primary-600);
+  transition: var(--transition);
+}
+
+.modale-content .btn:hover {
+  transform: rotate(90deg) scale(120%);
+}
