@@ -8,3 +8,8 @@ btnModale.addEventListener("click", function () {
 btnClose.addEventListener("click", function () {
   modale.style.display = "none"
 })
+window.addEventListener("click", function (e) {
+  if (e.target == modale) {
+    modale.style.display = "none"
+  }
+})
